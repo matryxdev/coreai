@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreAI - Terms of Use</title>
+    <link rel="icon" href="images/coreai.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+    <style>
+        /* Variables and reset */
+        :root {
+            --primary: #4A6FFF;
+            --primary-dark: #3D5BD9;
+            --secondary: #FF6B6B;
+            --dark: #121A29;
+            --light: #F5F9FC;
+            --gray: #E1E5EE;
+            --text: #333;
+            --text-light: #666;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, #4A6FFF, #9D66FF);
+            --gradient-dark: linear-gradient(135deg, #3D5BD9, #8952E0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(74, 111, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-dark);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(74, 111, 255, 0.3);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Header Section */
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before, .page-header::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .page-header::before {
+            top: -150px;
+            left: -150px;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .page-header::after {
+            bottom: -150px;
+            right: -150px;
+            animation: pulse 8s infinite alternate 4s;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .content-title {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content-title::after {
+            content: '';
+            width: 60%;
+            height: 3px;
+            background: var(--gradient);
+            position: absolute;
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+
+        .terms-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .terms-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .terms-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+        }
+
+        .terms-card h3 i {
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .terms-card p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .terms-card ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .terms-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .terms-card a {
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .terms-card a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-description {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title::after {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background: var(--gradient);
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+        }
+
+        .footer-links {
+            text-align: center;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .terms-card {
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .page-header {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .content-title {
+                font-size: 26px;
+            }
+
+            .terms-card h3 {
+                font-size: 20px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 10;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-brain"></i> CoreAI
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#ebooks"><i class="fas fa-book"></i> eBooks</a></li>
+                <li><a href="index.html#features"><i class="fas fa-list-alt"></i> Features</a></li>
+                <li><a href="index.html#cta"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" class="btn snipcart-checkout"><i class="fas fa-shopping-cart"></i> <span class="snipcart-items-count">0</span> | <span class="snipcart-total-price">0.00€</span></a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-file-contract"></i> Terms of Use</h1>
+            <p>Please read these terms and conditions carefully before using our website or purchasing our eBooks. By accessing our site, you agree to be bound by these Terms of Use.</p>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container content-container">
+            <div class="terms-card">
+                <h3><i class="fas fa-handshake"></i> Acceptance of Terms</h3>
+                <p>By accessing or using the CoreAI website (referred to as "we," "us," or "our"), you agree to be bound by these Terms of Use, our Privacy Policy, and any additional terms and conditions that may apply to specific areas of our website or to products and services available through our website.</p>
+                <p>If you do not agree with these terms, please do not use our website or purchase our products.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-user-circle"></i> User Accounts</h3>
+                <p>Some features of our website may require you to create an account. When you create an account, you agree to:</p>
+                <ul>
+                    <li>Provide accurate, current, and complete information</li>
+                    <li>Maintain and promptly update your account information</li>
+                    <li>Keep your password secure and confidential</li>
+                    <li>Notify us immediately of any unauthorized use of your account</li>
+                    <li>Be responsible for all activities that occur under your account</li>
+                </ul>
+                <p>We reserve the right to disable any user account at any time if, in our opinion, you have failed to comply with these Terms of Use or if we believe your account is being used fraudulently.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-copyright"></i> Intellectual Property</h3>
+                <p>All content on this website, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, is the property of CoreAI or its content suppliers and is protected by international copyright laws.</p>
+                <p>Our eBooks and other digital products are protected by copyright and other intellectual property laws. When you purchase our eBooks, you are granted a non-exclusive, non-transferable license to use the content for your personal, non-commercial use only.</p>
+                <p>You may not:</p>
+                <ul>
+                    <li>Modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information or content obtained from our website or our eBooks without our prior written consent</li>
+                    <li>Use our content for any commercial purpose</li>
+                    <li>Remove any copyright, trademark, or other proprietary notices from our content</li>
+                    <li>Transfer the eBooks to another person or share them publicly</li>
+                    <li>Circumvent, disable, or otherwise interfere with security-related features of our website or digital products</li>
+                </ul>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-shopping-bag"></i> Products and Purchases</h3>
+                <p>We strive to provide accurate descriptions of our eBooks and other products. However, we do not warrant that product descriptions or other content on our website is accurate, complete, reliable, current, or error-free.</p>
+                <p>By placing an order, you represent that:</p>
+                <ul>
+                    <li>You are legally capable of entering into binding contracts</li>
+                    <li>You are at least 18 years old</li>
+                    <li>The information you provide during the ordering process is accurate and complete</li>
+                </ul>
+                <p>Once your order is complete, you will receive an email confirmation with details of your purchase and instructions for accessing your eBook(s).</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-credit-card"></i> Payments and Refunds</h3>
+                <p>All prices are displayed in Euros (€) and include applicable taxes. We reserve the right to change prices at any time without notice.</p>
+                <p>We use third-party payment processors to handle transactions securely. By making a purchase, you agree to the terms and conditions of these payment processors.</p>
+                <p><strong>Refund Policy:</strong> Due to the digital nature of our products and the fact that they cannot be "returned," all sales are generally final. However, we value customer satisfaction and will consider refund requests on a case-by-case basis if:</p>
+                <ul>
+                    <li>You encounter significant technical issues that prevent you from accessing the eBook</li>
+                    <li>The content of the eBook is substantially different from what was described</li>
+
+                </ul>
+                <p>To request a refund, please contact our customer support team at <a href="mailto:coreai-contact@gmail.com">coreai-contact@gmail.com</a>.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-exclamation-triangle"></i> Limitation of Liability</h3>
+                <p>To the fullest extent permitted by applicable law, CoreAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:</p>
+                <ul>
+                    <li>Your access to or use of or inability to access or use our website or products</li>
+                    <li>Any conduct or content of any third party on our website</li>
+                    <li>Any content obtained from our website</li>
+                    <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                </ul>
+                <p>Our liability is limited to the maximum extent permitted by law, and in no event shall our total liability to you for all damages, losses, or causes of action exceed the amount you paid to CoreAI for the purchase of our products.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-gavel"></i> Indemnification</h3>
+                <p>You agree to indemnify, defend, and hold harmless CoreAI, its officers, directors, employees, agents, licensors, and suppliers from and against all losses, expenses, damages, and costs, including reasonable attorneys' fees, resulting from any violation of these Terms of Use or any activity related to your account (including negligent or wrongful conduct) by you or any other person accessing our website using your account.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-unlink"></i> Termination</h3>
+                <p>We may terminate or suspend your account and access to our services immediately, without prior notice or liability, for any reason, including, without limitation, if you breach these Terms of Use.</p>
+                <p>Upon termination:</p>
+                <ul>
+                    <li>Your right to use our services will immediately cease</li>
+                    <li>If we terminate your account for breach of these terms, you will not be entitled to any refund</li>
+                    <li>All provisions of these Terms of Use which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability</li>
+                </ul>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-balance-scale"></i> Governing Law</h3>
+                <p>These Terms of Use shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
+                <p>Any dispute arising from or relating to these terms or your use of our website or products shall be resolved exclusively in the courts located in [Your City/State], and you hereby consent to the personal jurisdiction and venue of such courts.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-edit"></i> Changes to These Terms</h3>
+                <p>We reserve the right to update or modify these Terms of Use at any time without prior notice. Changes will be effective immediately upon posting on our website. Your continued use of our website following the posting of changes constitutes your acceptance of such changes.</p>
+                <p>We encourage you to review these Terms of Use periodically to stay informed about our policies and practices.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-link"></i> Third-Party Links</h3>
+                <p>Our website may contain links to third-party websites or services that are not owned or controlled by CoreAI. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+                <p>You acknowledge and agree that CoreAI shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services available on or through any such websites or services.</p>
+                <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.</p>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+                <p>If you have any questions, concerns, or suggestions regarding these Terms of Use, please contact us at:</p>
+                <p><strong>Email:</strong> <a href="mailto:coreai-contact@gmail.com">coreai-contact@gmail.com</a></p>
+            </div>
+
+            <p class="last-updated">Last Updated: March 27, 2025</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-brain"></i> CoreAI
+                    </a>
+                    <p class="footer-description">Quality eBooks to understand and master artificial intelligence at all levels.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#ebooks">eBooks</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#cta">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-headset"></i> Technical Support</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> coreai-contact@gmail.com</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CoreAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+    
+    <!-- Snipcart -->
+    <div id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY" hidden></div>
+    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+</body>
+</html>
